@@ -1,0 +1,46 @@
+nav.dropdown-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: left;
+
+    a {
+      display: block;
+      padding: 0.5em 1em;
+      white-space: nowrap;
+      background-color: transparent;
+    }
+
+    & > ul {
+      display: none;
+      position: absolute;
+      min-width: 100%;
+      z-index: 999;
+
+      li {
+        display: block;
+        float: none;
+        position: relative;
+      }
+
+      ul {
+        left: 100%;
+        top: 0;
+
+        li a {
+          min-width: 100%;
+        }
+      }
+    }
+
+    &:hover > ul {
+      display: block;
+    }
+  }
+}

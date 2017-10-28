@@ -1,0 +1,40 @@
+/** Body & Wrapper
+ ---------------------------------------------------------*/
+
+html, body {
+  max-width: 100%;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+}
+
+/** Link Styles
+ ---------------------------------------------------------*/
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+
+/** Image Alignment
+ ---------------------------------------------------------*/
+
+.aligncenter {
+  margin: 1em auto;
+}
+
+.alignleft {
+  margin: 1em 1em 1em 0;
+}
+
+.alignright {
+  margin: 1em 0 1em 1em;
+}

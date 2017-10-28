@@ -1,0 +1,184 @@
+@media (max-width: 768px) {
+
+  .wrap {
+    width: 100%;
+  }
+
+  .hero-height-full,
+  .hero-height-full .slick-slide,
+  .hero-height-full .hero-slide-inner,
+  .hero-height-short,
+  .hero-height-short .slick-slide,
+  .hero-height-short .hero-slide-inner,
+  .hero-height-medium,
+  .hero-height-medium .slick-slide,
+  .hero-height-medium .hero-slide-inner {
+    min-height: 0px;
+    height: auto;
+  }
+
+  .hero-slide-inner {
+    display: none;
+  }
+
+  .hero-content-responsive {
+    display: block;
+  }
+
+  .module-width-1,
+  .module-width-2,
+  .module-width-3,
+  .module-width-4,
+  .module-width-5,
+  .module-width-6,
+  .module-width-7,
+  .module-width-8,
+  .module-width-9,
+  .module-width-10,
+  .module-width-11,
+  .module-width-12 {
+    width: 100%;
+  }
+
+  .module-content,
+  .module-issue-single,
+  .module-article-single {
+    min-width: 100%;
+  }
+
+  .issues-index {
+    padding: 0;
+
+    .issue-archive-single,
+    .issue-archive-single:nth-child(even) {
+      @include grid(flex-start, flex-start, column);
+    }
+
+    .issue-archive-image {
+      padding-top: 56.25%;
+    }
+
+    .issue-archive-content {
+      padding: 2rem;
+    }
+
+    .issue-archive-image,
+    .issue-archive-content {
+      width: 100%;
+    }
+
+    .issue-archive-link {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .module-empty {
+    padding-top: 100% !important;
+  }
+
+  .campaign-donation-group {
+    @include grid(center, flex-start, row, wrap);
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    .donate-list-prepended {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .news-index .module-article-single {
+    @include grid(flex-start, flex-start, column);
+    margin: 1rem 0;
+
+    .module-article-image,
+    .module-article-content {
+      width: 100%;
+    }
+
+    .module-article-image {
+      padding-top: 56.25%;
+    }
+
+    .module-article-content {
+      font-size: 1em;
+      text-align: center;
+    }
+  }
+
+  .issue-archive-single {
+    width: 100%;
+    margin: 2rem 0;
+
+    .issue-summary {
+      padding: 0;
+      font-size: 1em;
+    }
+  }
+
+  .module-cta {
+
+    form {
+      @include grid(center, center, column);
+      margin: 0 auto;
+
+      input {
+        text-align: center;
+      }
+
+      button {
+        margin: 1rem 0;
+      }
+    }
+  }
+
+  .module-issue-single {
+    padding: 0;
+  }
+}
+
+
+
+
+@media (max-width: 450px) {
+  #navigation-responsive {
+    width: 65vw;
+
+    &.is-active {
+      left: 35vw;
+    }
+  }
+
+  #navigation-responsive .campaign-social li {
+    width: 2rem;
+    height: 2rem;
+
+    img {
+      margin-top: -0.25rem;
+    }
+  }
+
+  #footer nav {
+    display: none;
+  }
+}
+
+
+
+
+@media (max-width: 400px) {
+  #navigation-responsive {
+    width: 100vw;
+
+    &.is-active {
+      left: 0;
+    }
+  }
+
+  #responsive-nav-close-secondary {
+    display: block;
+  }
+}
