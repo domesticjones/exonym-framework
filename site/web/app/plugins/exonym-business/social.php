@@ -13,6 +13,7 @@
           $icon = get_sub_field('icon');
             echo '<li><a href="' . get_sub_field('url') . '" title="' . get_sub_field('description') . '" target="_blank">';
               echo '<img src="' . $icon['sizes']['small'] . '" alt="' . get_sub_field('description') . '" />';
+              echo '<span>' . $icon['title'] . '</span>';
             echo '</a></li>';
         endwhile;
       echo '</ul></nav>';
