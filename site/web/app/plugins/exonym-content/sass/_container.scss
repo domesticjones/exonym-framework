@@ -1,0 +1,63 @@
+.module-wrapper {
+  @include grid(center, stretch, row, wrap);
+}
+
+.module {
+  @include grid(center, center);
+  position: relative;
+  overflow: hidden;
+}
+
+/** Background
+ ---------------------------------------------------------*/
+.module-bg {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+
+  &-blue { background-color: $blue; }
+  &-bluelt { background-color: $blue-light; }
+  &-white { background-color: $white; }
+  &-grey { background-color: $grey; }
+  &-greylt { background-color: $grey-light; }
+  &-black { background-color: $black; }
+
+  span {
+    display: none;
+  }
+}
+
+/** Animation
+ ---------------------------------------------------------*/
+ .animate-on-enter,
+ .animate-on-leave {
+   opacity: 0;
+   top: 4rem;
+   @include transition(all 600ms ease-in-out);
+
+   &.is-visible {
+     opacity: 1;
+     top: 0;
+   }
+ }
+
+/** Parallax
+ ---------------------------------------------------------*/
+.animate-z-subtle .module-bg { height: calc(100% + 4rem); }
+
+/** Width Calculation
+ ---------------------------------------------------------*/
+@mixin columnizer($columns) {
+  $full: 100%;
+  $calculate: $full * ($columns / 12);
+  width: $calculate;
+}
+
+@for $i from 1 through 12 {
+  .module-x-#{$i} { @include columnizer($i); }
+}

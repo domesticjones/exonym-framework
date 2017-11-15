@@ -1,0 +1,86 @@
+.slick-slide:active,
+.slick-slide:focus {
+  outline: none;
+}
+
+.carousel-wrapper {
+
+  .slick-slide {
+    position: relative;
+    padding: 1rem;
+  }
+
+  .slick-track {
+    @include grid(flex-start, stretch);
+  }
+}
+
+.carousel-slide-wrap {
+  position: relative;
+  padding: 1rem;
+  border-radius: 2px;
+  z-index: 1;
+  transform: scale(1);
+  @include transition();
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.module-carousel-post-link {
+  @include clearfix;
+
+  time {
+    display: inline-block;
+    font-size: 0.85em;
+    font-family: $font-italic;
+    color: $grey;
+    margin-bottom: 1em;
+  }
+
+  p {
+    padding-bottom: 0;
+  }
+
+  img {
+    display: block;
+    width: 30%;
+    border-radius: 100%;
+    margin: 0.5em 0 0.25em 1em;
+  }
+}
+
+.carousel-nav {
+  position: absolute;
+  z-index: 999;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 50%;
+  margin-top: -0.75rem;
+  background-size: cover;
+  cursor: hand;
+  cursor: pointer;
+  @include transition(all 150ms linear);
+
+  &.next {
+    right: -2em;
+    background-image: url('../images/icon-play.svg');
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+
+  &.previous {
+    left: -2em;
+    background-image: url('../images/icon-play.svg');
+    transform: rotate(180deg) scale(1);
+
+    &:hover {
+      transform: rotate(180deg) scale(1.25);
+    }
+  }
+}
