@@ -6,16 +6,32 @@ jQuery(document).ready(() => {
   $('#container iframe, #container embed, #container video').not('.ignore-ratio').wrap('<div class="video-container" />');
 
   // HEADER: Responsive Nav Toggle
-  $('#responsive-nav-open').click(e => {
+  $('#responsive-nav-toggle').click(e => {
+    const $this = $(e.currentTarget);
     e.preventDefault();
-    $('#navigation-responsive, #responsive-nav-close').addClass('is-active');
-    $('#logo-responsive-header').addClass('is-hidden');
+    $this.toggleClass('is-active');
+    $('#header-responsive').toggleClass('is-active');
   });
-  $('#responsive-nav-close, #responsive-nav-close-secondary').click(e => {
+  $('#responsive-nav-close').click(e => {
     e.preventDefault();
-    $('#navigation-responsive, #responsive-nav-close').removeClass('is-active');
-    $('#logo-responsive-header').removeClass('is-hidden');
+    $('#header-responsive, #responsive-nav-toggle').removeClass('is-active');
   });
+
+  // MODULE: Slideshow
+  $('.module-slideshow-container').slick({
+    autoplay: false,
+  });
+
+  // MODULE: Gallery Slideshow
+  $('.module-gallery-slideshow').slick({
+    adaptiveHeight: true,
+    fade: true,
+  });
+
+
+
+
+
 
   // MODAL: Functions
   $('.module-expand').click(e => {

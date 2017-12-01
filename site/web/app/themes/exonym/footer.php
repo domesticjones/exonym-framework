@@ -5,7 +5,8 @@
 ?>
     <footer id="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
       <div class="wrap">
-        <nav class="dropdown-menu cf" role="navigation">
+        Copyright <?php ex_brand('legal'); ?>
+        <nav class="nav-footer menu-horizontal" role="navigation">
           <?php wp_nav_menu(array(
             'container' => 'ul',                    // enter '' to remove nav container
             'container_class' => 'footer-links cf',	// class of container (should you choose to use it)
@@ -23,10 +24,6 @@
       </div>
     </footer>
   </div>
-  <?php
-    get_template_part('templates/modal');
-    get_template_part('templates/navigation', 'responsive');
-    wp_footer();
-  ?>
+  <?php wp_footer(); ?>
 </body>
 </html>

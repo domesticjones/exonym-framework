@@ -12,61 +12,10 @@
 
 /** Text Settings
  ---------------------------------------------------------*/
-// Size
 .module-text {
   &-xsmall { font-size: 0.75em; }
   &-small { font-size: 0.85em; }
   &-normal { font-size: 1em; }
   &-large { font-size: 1.25em; }
   &-xlarge { font-size: 1.5em; }
-}
-
-// Text Color
-.module-color {
-  &-blue { color: $blue; }
-  &-bluelt { color: $blue-light; }
-  &-white { color: $white; }
-  &-grey { color: $grey; }
-  &-greylt { color: $grey-light; }
-  &-black { color: $black; }
-}
-
-// Link Color
-.module-link {
-  &-blue a { color: $blue; }
-  &-bluelt a { color: $blue-light; }
-  &-white a { color: $white; }
-  &-grey a { color: $grey; }
-  &-greylt a { color: $grey-light; }
-  &-black a { color: $black; }
-  &-blue a:link { color: $blue; }
-  &-bluelt a:link { color: $blue-light; }
-  &-white a:link { color: $white; }
-  &-grey a:link { color: $grey; }
-  &-greylt a:link { color: $grey-light; }
-  &-black a:link { color: $black; }
-  &-blue a:visited { color: $blue; }
-  &-bluelt a:visited { color: $blue-light; }
-  &-white a:visited { color: $white; }
-  &-grey a:visited { color: $grey; }
-  &-greylt a:visited { color: $grey-light; }
-  &-black a:visited { color: $black; }
-}
-
-@mixin headingArray($color) {
-  @for $i from 1 through 6 {
-    h#{$i} {
-      color: $color;
-    }
-  }
-}
-
-// Heading Color
-.module-heading {
-  &-blue { @include headingArray($blue); }
-  &-bluelt { @include headingArray($blue-light); }
-  &-white { @include headingArray($white); }
-  &-grey { @include headingArray($grey); }
-  &-greylt { @include headingArray($grey-light); }
-  &-black { @include headingArray($black); }
 }

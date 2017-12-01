@@ -13,16 +13,20 @@
  ---------------------------------------------------------*/
 @import
   'global/base',
+  'global/navigation',
   'global/header',
   'global/footer',
-  'global/navigation'
+  '../../node_modules/slick-carousel/slick/slick.scss'
 ;
 
-/** Breakpoints
+/** Exonym Plugins
  ---------------------------------------------------------*/
 @import
-  'breakpoints/tablet',
-  'breakpoints/mobile',
-  'breakpoints/desktop',
-  'breakpoints/hd'
+  // Exonym Content
+  '../../../../plugins/exonym-content/sass/exonym-content.scss',
+  'modules/exCon-animation',
+  'modules/exCon-modules',
+  // Exonym Staff
+  '../../../../plugins/exonym-staff/exonym-staff.scss',
+  'modules/exStaff'
 ;

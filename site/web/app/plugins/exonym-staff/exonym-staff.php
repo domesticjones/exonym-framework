@@ -3,7 +3,7 @@
     Plugin Name: Exonym - Staff
     Plugin URI: http://domesticjones.com
     Description: Display company directories, staff members, and their bios
-    Version: 1.0
+    Version: 1.2
     Author: Dustin Jones
     Author URI: http://domesticjones.com
     Text Domain: exStaff
@@ -12,6 +12,12 @@
   if (!defined('WPINC')) { die; }
 
   require_once('cpt.php');
+  require_once('fields.php');
+
+  // Plugin sanity check
+  function exStaff() {
+    return true;
+  }
 
   // Display contact methods
   function exStaff_contactMethods($style) {

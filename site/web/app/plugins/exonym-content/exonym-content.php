@@ -3,7 +3,7 @@
     Plugin Name: Exonym - Content Architect
     Plugin URI: http://domesticjones.com
     Description: Modules for building out page content
-    Version: 1.0
+    Version: 1.1
     Author: Dustin Jones
     Author URI: http://domesticjones.com
     Text Domain: exCon
@@ -19,6 +19,7 @@
       while (have_rows('content_architect')) {
         the_row();
         require_once('ctas.php');
+        include_once(ABSPATH . 'wp-admin/includes/plugin.php');
         include('wrappers/container-start.php');
         include('wrappers/content-start.php');
         require_once('modules/module-logic.php');
@@ -29,12 +30,15 @@
           include('modules/code.php');
         } elseif (get_row_layout() == 'content') {
           include('modules/content.php');
+        } elseif (get_row_layout() == 'gallery') {
+          include('modules/gallery.php');
         } elseif (get_row_layout() == 'multi-column') {
           include('modules/multi-column.php');
         } elseif (get_row_layout() == 'slideshow') {
           include('modules/slideshow.php');
-        } elseif (get_row_layout() == 'staff') {
-          include('modules/staff.php');
+        } elseif (get_row_layout() == 'staff' and function_exists('exStaff')) {
+          include('../exonym-staff/exonym-staff.php');
+          include('../exonym-staff/module/staff.php');
         }
         ex_cta('below');
         include('wrappers/content-end.php');

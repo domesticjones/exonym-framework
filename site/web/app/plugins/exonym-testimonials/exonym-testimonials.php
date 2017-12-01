@@ -13,6 +13,6 @@
 
   require_once('cpt.php');
 
-  function exTest_module() {
+  function exTestis() {
     return true;
   }

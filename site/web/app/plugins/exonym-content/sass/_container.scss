@@ -20,35 +20,10 @@
   background-size: cover;
   background-position: center center;
 
-  &-blue { background-color: $blue; }
-  &-bluelt { background-color: $blue-light; }
-  &-white { background-color: $white; }
-  &-grey { background-color: $grey; }
-  &-greylt { background-color: $grey-light; }
-  &-black { background-color: $black; }
-
   span {
     display: none;
   }
 }
-
-/** Animation
- ---------------------------------------------------------*/
- .animate-on-enter,
- .animate-on-leave {
-   opacity: 0;
-   top: 4rem;
-   @include transition(all 600ms ease-in-out);
-
-   &.is-visible {
-     opacity: 1;
-     top: 0;
-   }
- }
-
-/** Parallax
- ---------------------------------------------------------*/
-.animate-z-subtle .module-bg { height: calc(100% + 4rem); }
 
 /** Width Calculation
  ---------------------------------------------------------*/

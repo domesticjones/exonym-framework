@@ -1,9 +1,7 @@
 <?php
   if (!defined('WPINC')) { die; }
 
-  // Register Custom Post Type
   function cpt_staff() {
-
   	$labels = array(
   		'name'                  => _x( 'Staff', 'Post Type General Name', 'staff' ),
   		'singular_name'         => _x( 'Staff Member', 'Post Type Singular Name', 'staff' ),
@@ -60,7 +58,6 @@
   		'show_in_rest'          => true,
   	);
   	register_post_type( 'staff', $args );
-
   }
   add_action( 'init', 'cpt_staff', 0 );
 
@@ -71,5 +68,42 @@ function cpt_staff_entertitle($title) {
   }
   return $title;
 }
-
 add_filter('enter_title_here', 'cpt_staff_entertitle');
+
+function ctax_staff() {
+	$labels = array(
+		'name'                       => _x( 'Staff Categories', 'Taxonomy General Name', 'staff_category' ),
+		'singular_name'              => _x( 'Staff Category', 'Taxonomy Singular Name', 'staff_category' ),
+		'menu_name'                  => __( 'Staff Categories', 'staff_category' ),
+		'all_items'                  => __( 'All Staff Categories', 'staff_category' ),
+		'parent_item'                => __( 'Parent Staff Category', 'staff_category' ),
+		'parent_item_colon'          => __( 'Parent Staff Category:', 'staff_category' ),
+		'new_item_name'              => __( 'New Staff Category', 'staff_category' ),
+		'add_new_item'               => __( 'Add New Staff Category', 'staff_category' ),
+		'edit_item'                  => __( 'Edit Staff Category', 'staff_category' ),
+		'update_item'                => __( 'Update Staff Category', 'staff_category' ),
+		'view_item'                  => __( 'View Staff Category', 'staff_category' ),
+		'separate_items_with_commas' => __( 'Separate categories with commas', 'staff_category' ),
+		'add_or_remove_items'        => __( 'Add or remove staff categories', 'staff_category' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'staff_category' ),
+		'popular_items'              => __( 'Popular Staff Categories', 'staff_category' ),
+		'search_items'               => __( 'Search Staff Categories', 'staff_category' ),
+		'not_found'                  => __( 'Not Found', 'staff_category' ),
+		'no_terms'                   => __( 'No Staff Categories', 'staff_category' ),
+		'items_list'                 => __( 'Staff Categories list', 'staff_category' ),
+		'items_list_navigation'      => __( 'Staff Categories list navigation', 'staff_category' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => false,
+		'show_tagcloud'              => false,
+		'rewrite'                    => false,
+		'show_in_rest'               => true,
+	);
+	register_taxonomy( 'staff_cat', array( 'staff' ), $args );
+}
+add_action( 'init', 'ctax_staff', 0 );

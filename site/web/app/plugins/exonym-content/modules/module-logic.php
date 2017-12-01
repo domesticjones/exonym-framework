@@ -13,7 +13,7 @@
     return $output;
   }
 
-  // CAROUSEL: Blog Post
+  // CAROUSEL: Carousel Post
   function exCon_carouselPost() {
     echo '<a href="' . get_the_permalink() . '" class="module-carousel-post-link">';
     echo '<h2 class="module-carousel-post-title">' . get_the_title() . '</h2>';

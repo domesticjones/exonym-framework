@@ -46,26 +46,24 @@
             }
             wp_reset_postdata();
           }
-        } elseif (get_row_layout() == 'testimonials') {
-          if (is_plugin_active('exonym-testimonials/exonym-testimonials.php')) {
-            $testimonialCount = get_sub_field('number_of_blog_posts');
-            $moduleTestimonialArgs = array(
-              'post_type'       => array('testimonial'),
-              'nopaging'        => true,
-              'orderby'         => 'rand',
-              'posts_per_page'  => $testimonialCount,
-            );
-            $moduleTestimonials = new WP_Query($moduleTestimonialArgs);
-            if ($moduleTestimonials->have_posts()) {
-              while ($moduleTestimonials->have_posts()) {
-                $moduleTestimonials->the_post();
-                echo $wrapStart;
-                  the_content();
-                  echo '<h3 class="testimonial-name">' . get_the_title() . '</h3>';
-                echo $wrapEnd;
-              }
-              wp_reset_postdata();
+        } elseif (get_row_layout() == 'testimonials' && function_exists('exTestis') ) {
+          $testimonialCount = get_sub_field('number_of_blog_posts');
+          $moduleTestimonialArgs = array(
+            'post_type'       => array('testimonial'),
+            'nopaging'        => true,
+            'orderby'         => 'rand',
+            'posts_per_page'  => $testimonialCount,
+          );
+          $moduleTestimonials = new WP_Query($moduleTestimonialArgs);
+          if ($moduleTestimonials->have_posts()) {
+            while ($moduleTestimonials->have_posts()) {
+              $moduleTestimonials->the_post();
+              echo $wrapStart;
+                the_content();
+                echo '<h3 class="testimonial-name">' . get_the_title() . '</h3>';
+              echo $wrapEnd;
             }
+            wp_reset_postdata();
           }
         }
       ?>

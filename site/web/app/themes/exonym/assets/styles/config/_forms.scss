@@ -66,12 +66,10 @@ legend,
 fieldset {
   box-sizing: border-box;
   outline: none;
-
   font-family: $fh-font-family;
   font-size: $fh-font-size;
   color: $fh-font-color;
   vertical-align: top;
-
   display: $fh-display;
   @include center-layout;
 }
@@ -110,9 +108,6 @@ textarea {
   max-width: $fh-input-max-width;
   padding: $fh-input-height / 5;
   background-color: $fh-input-bg-color;
-
-  -webkit-border-radius: $fh-border-radius;
-  -moz-border-radius: $fh-border-radius;
   border-radius: $fh-border-radius;
   border: $fh-border-width $fh-border-style $fh-border-color;
 
@@ -138,13 +133,13 @@ input[type="url"],
 input[type="week"],
 input[list] {
   height: $fh-input-height;
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 /* Other */
 
 textarea {
-  -webkit-appearance: none;
+  appearance: none;
   overflow: auto;
 }
 
@@ -160,12 +155,12 @@ input[type="file"] {
 
 input[type="search"] {
   height: $fh-input-height;
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 input[type="checkbox"],
@@ -196,10 +191,7 @@ select {
   background-repeat: no-repeat;
 
   @if $fh-allow-vendor-styling == false {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
+    appearance: none;
   }
 }
 
@@ -223,8 +215,6 @@ fieldset {
     border: 0;
   } @else {
     padding: 10px 25px;
-    -webkit-border-radius: $fh-border-radius;
-    -moz-border-radius: $fh-border-radius;
     border-radius: $fh-border-radius;
     border: $fh-border-width $fh-border-style $fh-border-color;
   }
@@ -259,9 +249,7 @@ input[type="image"] {
   line-height: 1;
   letter-spacing: 0.05em;
   white-space: nowrap;
-
   font-weight: $font-light;
-
   appearance: none;
   border-radius: $fh-border-radius;
   border: 2px solid black;
@@ -285,11 +273,23 @@ input[type="image"] {
     position: relative;
     z-index: 1;
   }
+
+  &.button-stripped {
+    background: transparent;
+    border: none;
+  }
 }
 
 input[type="image"] {
   text-align: center;
   padding: $fh-input-height / 5;
+}
+
+.button-stripped {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
 }
 
 /* States ------------------ */
@@ -333,5 +333,10 @@ input[type="reset"]:focus {
 
   &::before {
     transform: scaleY(0);
+  }
+
+  &.button-stripped {
+    background: transparent;
+    border: none;
   }
 }

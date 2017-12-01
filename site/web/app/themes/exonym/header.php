@@ -13,33 +13,49 @@
 	</head>
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 		<div id="container">
-      <header id="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+      <header id="header" class="header-top" role="banner" itemscope itemtype="http://schema.org/WPHeader">
         <div class="wrap">
-          <div class="header-left">
-            <?php ex_logo(); ?>
-            <?php ex_social(); ?>
-            <nav class="dropdown-menu cf" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-              <?php wp_nav_menu(array(
-                'container' => false,								// remove nav container
-                'container_class' => '',						// class of container (should you choose to use it)
-                'menu' => __('Header', 'exonym'),	  // nav name
-                'menu_class' => '',									// adding custom nav class
-                'theme_location' => 'header-menu',	// where it's located in the theme
-                'before' => '',											// before the menu
-                'after' => '',											// after the menu
-                'link_before' => '',								// before each link
-                'link_after' => '',									// after each link
-                'depth' => 0,												// limit the depth of the nav
-                'fallback_cb' => ''									// fallback function (if there is one)
-              )); ?>
-            </nav>
-          </div>
-          <div id="header-responsive">
-            <a href="<?php echo get_home_url(); ?>">
-
-            </a>
-            <button id="responsive-nav-close">Close</button>
-            <button id="responsive-nav-open"><?php echo file_get_contents(asset_path('images/icon-menu.svg')); ?></button>
-          </div>
+          <a href="<?php echo get_home_url(); ?>">
+						<img src="<?php ex_logo(); ?>" alt="Logo for <?php ex_brand(); ?>" class="logo-header" />
+					</a>
+          <nav class="nav-header menu-dropdown" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <?php wp_nav_menu(array(
+              'container' => false,								// remove nav container
+              'container_class' => '',						// class of container (should you choose to use it)
+              'menu' => __('Header', 'exonym'),	  // nav name
+              'menu_class' => '',									// adding custom nav class
+              'theme_location' => 'header-menu',	// where it's located in the theme
+              'before' => '',											// before the menu
+              'after' => '',											// after the menu
+              'link_before' => '',								// before each link
+              'link_after' => '',									// after each link
+              'depth' => 0,												// limit the depth of the nav
+              'fallback_cb' => ''									// fallback function (if there is one)
+            )); ?>
+          </nav>
+          <?php ex_social(); ?>
+					<button id="responsive-nav-toggle" class="nav-responsive-toggle button-stripped">
+						<img src="<?php echo asset_path('images/icon-menu.svg'); ?>" alt="Navigation Toggle">
+					</button>
         </div>
       </header>
+			<header id="header-responsive">
+				<nav class="nav-responsive menu-vertical" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<?php wp_nav_menu(array(
+						'container' => false,						  		 // remove nav container
+						'container_class' => '',					  	 // class of container (should you choose to use it)
+						'menu' => __('Responsive', 'exonym'),  // nav name
+						'menu_class' => '',										 // adding custom nav class
+						'theme_location' => 'responsive-menu', // where it's located in the theme
+						'before' => '',							  				 // before the menu
+						'after' => '',								  			 // after the menu
+						'link_before' => '',					  			 // before each link
+						'link_after' => '',					  				 // after each link
+						'depth' => 0,									  			 // limit the depth of the nav
+						'fallback_cb' => ''						  			 // fallback function (if there is one)
+					)); ?>
+				</nav>
+				<button id="responsive-nav-close" class="nav-responsive-close button-stripped">
+					<img src="<?php echo asset_path('images/icon-close.svg'); ?>" alt="Navigation Toggle">
+				</button>
+			</header>

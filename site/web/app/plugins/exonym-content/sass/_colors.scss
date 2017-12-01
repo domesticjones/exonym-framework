@@ -1,0 +1,28 @@
+// Heading Color Function
+@mixin headingArray($color) {
+  @for $i from 1 through 6 {
+    h#{$i} { color: $color; }
+  }
+}
+
+@each $chosen-color in $all-colors {
+  $i: index($all-colors, $chosen-color);
+  // BG Color
+  .module-bg-#{nth($all-colors-names, $i)} { background-color: $chosen-color; }
+  // Text Color
+  .module-color-#{nth($all-colors-names, $i)} { color: $chosen-color; }
+  // Link Color
+  .module-link-#{nth($all-colors-names, $i)} a { color: $chosen-color; }
+  .module-link-#{nth($all-colors-names, $i)} a:link { color: $chosen-color; }
+  .module-link-#{nth($all-colors-names, $i)} a:visited { color: $chosen-color; }
+  // Heading Color
+  .module-heading-#{nth($all-colors-names, $i)} { @include headingArray($chosen-color); }
+  // CTA BG's
+  a.cta-bg-#{nth($all-colors-names, $i)} { background-color: $chosen-color; }
+  a.cta-bg-#{nth($all-colors-names, $i)}:focus { background-color: $chosen-color; }
+  // CTA Colors
+  a.cta-color-#{nth($all-colors-names, $i)} { color: $chosen-color; }
+  a.cta-color-#{nth($all-colors-names, $i)}:focus { color: $chosen-color; }
+  a.cta-color-#{nth($all-colors-names, $i)}:link { color: $chosen-color; }
+  a.cta-color-#{nth($all-colors-names, $i)}:visited { color: $chosen-color; }
+}

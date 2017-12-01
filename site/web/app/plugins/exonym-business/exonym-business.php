@@ -3,7 +3,7 @@
     Plugin Name: Exonym - Your Business
     Plugin URI: http://domesticjones.com
     Description: Globalize all your business info with intuitive GUI's and shortcodes
-    Version: 1.0
+    Version: 1.1
     Author: Dustin Jones
     Author URI: http://domesticjones.com
     Text Domain: ex_business

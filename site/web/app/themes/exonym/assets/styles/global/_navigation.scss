@@ -1,7 +1,5 @@
-nav.dropdown-menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.menu-dropdown ul {
+  @include listStripped();
 
   li {
     position: relative;
@@ -12,7 +10,6 @@ nav.dropdown-menu ul {
 
     a {
       display: block;
-      padding: 0.5em 1em;
       white-space: nowrap;
       background-color: transparent;
     }
@@ -42,5 +39,14 @@ nav.dropdown-menu ul {
     &:hover > ul {
       display: block;
     }
+  }
+}
+
+
+.menu-vertical ul {
+  @include listStripped();
+
+  li {
+    display: block;
   }
 }
