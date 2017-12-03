@@ -13,16 +13,10 @@ html, body {
 
 /** Link Styles
  ---------------------------------------------------------*/
-
 a {
   text-decoration: none;
 }
-
-a:hover,
-a:focus,
-a:active {
-  text-decoration: none;
-}
+@include linkColor($blue, all);
 
 /** Image Alignment
  ---------------------------------------------------------*/

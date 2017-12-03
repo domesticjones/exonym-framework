@@ -1,0 +1,18 @@
+/** Link or Element Text Coloring
+ ---------------------------------------------------------*/
+@mixin linkColor($color: inherit, $state: all, $el: a) {
+  @mixin linkArrayStatic() {
+    #{$el}, #{$el}:link, #{$el}:visited { color: $color; }
+  }
+  @mixin linkArrayHover() {
+    #{$el}:hover, #{$el}:focus, #{$el}:active { color: $color; }
+  }
+  @if $state == all {
+    @include linkArrayStatic();
+    @include linkArrayHover();
+  } @else if $state == static {
+    @include linkArrayStatic();
+  } @else if $state == hover {
+    @include linkArrayHover();
+  }
+}

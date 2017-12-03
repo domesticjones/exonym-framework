@@ -4,6 +4,10 @@ $black:   #000;
 $red:     #f00;
 $blue:    #00f;
 
-// Color array for modules
-$all-colors: $white $grey $black $red $blue;
-$all-colors-names: white grey black red blue;
+$color-scheme: (
+  color-white: $white,
+  color-grey: $grey,
+  color-black: $black,
+  color-red: $red,
+  color-blue: $blue
+);
