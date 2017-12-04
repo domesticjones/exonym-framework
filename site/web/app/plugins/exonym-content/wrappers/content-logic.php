@@ -63,7 +63,7 @@
 
   // OUTPUT: Class List
   function exCon_contentClass() {
-    echo 'module-content' . exCon_maxWidth() . exCon_align() . exCon_textStyles();
+    echo 'module-inner' . exCon_maxWidth() . exCon_align() . exCon_textStyles();
   }
 
   // OUTPUT: Inline Styles

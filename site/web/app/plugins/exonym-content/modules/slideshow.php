@@ -36,7 +36,7 @@
       <div>
         <section class="module-slide-content-wrap<?php echo exCon_bgColor() . exCon_textStyles(); ?>" style="<?php echo $heightPrint; ?>">
           <?php exCon_containerBgImage(); ?>
-          <div class="<?php echo exCon_align() . exCon_maxWidth(); ?>" style="<?php echo exCon_widthInner() . $padding; ?>">
+          <div class="module-slide-inner<?php echo exCon_align() . exCon_maxWidth(); ?>" style="<?php echo exCon_widthInner() . $padding; ?>">
             <?php
               ex_cta('above');
               the_sub_field('slide_content');

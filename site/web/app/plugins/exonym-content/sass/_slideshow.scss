@@ -1,4 +1,4 @@
-.module-slideshow .module-content {
+.module-slideshow .module-inner {
   width: 100%;
 }
 
@@ -15,4 +15,14 @@
 .slideshow-nav button {
   position: absolute;
   z-index: 90;
+}
+
+/** Breakpoints
+ ---------------------------------------------------------*/
+@media (max-width: 1024px) {
+  .module-slide-inner {
+    min-width: 100%;
+    padding: 2rem !important;
+    margin: auto;
+  }
 }
