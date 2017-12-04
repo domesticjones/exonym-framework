@@ -4,14 +4,18 @@
   // TAB: Styling - BgColor
   function exCon_bgColor() {
     $bgOptions = get_sub_field('background');
-    $output = ' module-bg-' . $bgOptions['color'];
+    $output = ' module-bg-color-' . $bgOptions['color'];
     return $output;
   }
 
   // TAB: Grid - Width
   function exCon_width() {
-    $gridOptions = get_sub_field('container');
-    $output = ' module-x-' . $gridOptions['size']['width'];
+    if (get_row_layout() == 'slideshow') {
+      $output = ' module-x-' . get_sub_field('width');
+    } else {
+      $gridOptions = get_sub_field('container');
+      $output = ' module-x-' . $gridOptions['size']['width'];
+    }
     return $output;
   }
 
@@ -19,11 +23,14 @@
   function exCon_padding() {
     $gridOptions = get_sub_field('container');
     $padding = $gridOptions['padding'];
-    $output = 'padding: ';
-    $output .= $padding['top'] . 'rem ';
-    $output .= $padding['right'] . 'rem ';
-    $output .= $padding['bottom'] . 'rem ';
-    $output .= $padding['left'] . 'rem;';
+    $output = '';
+    if ($gridOptions && get_row_layout() != 'slideshow') {
+      $output = 'padding: ';
+      $output .= $padding['top'] . 'rem ';
+      $output .= $padding['right'] . 'rem ';
+      $output .= $padding['bottom'] . 'rem ';
+      $output .= $padding['left'] . 'rem;';
+    }
     return $output;
   }
 
@@ -33,7 +40,10 @@
     $height = $gridOptions['size']['height'];
     $number = $height['amount'];
     $property = $height['kind'];
-    $output = 'min-height: ' . $number . $property . '; ';
+    $output = '';
+    if ($gridOptions && get_row_layout() != 'slideshow') {
+      $output = 'min-height: ' . $number . $property . '; ';
+    }
     return $output;
   }
 
@@ -68,7 +78,7 @@
   function exCon_parallax() {
     $parallax = get_sub_field('parallax');
     $output = '';
-    if ($parallax != 'none') {
+    if ($parallax != 'none' && get_row_layout() != 'slideshow') {
       $output = ' animate-parallax animate-z-' . $parallax;
     }
     return $output;
@@ -96,11 +106,13 @@
       $sizeChoice = 'large';
     }
     $image = $bgOptions['image']['sizes'][$sizeChoice];
+    if (!empty($image)) {
     ?>
       <div class="module-bg" style="opacity: <?php echo $opacity; ?>; background-image: url(<?php echo $image; ?>)">
         <span><?php echo $bgOptions['image']['alt']; ?></span>
       </div>
     <?php
+    }
   }
 
   // OUTPUT: Style ID

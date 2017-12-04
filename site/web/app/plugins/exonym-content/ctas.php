@@ -25,7 +25,7 @@
           unset($value);
           $deviceDisplay = implode('', $deviceDisplayOptions);
         }
-        $styleClasses = ' cta-bg-' . $style['background_color'] . ' cta-color-' . $style['text_color'];
+        $styleClasses = ' cta-bg-color-' . $style['background_color'] . ' cta-color-' . $style['text_color'];
         echo '<li class="module-cta-' . $style['size'] . $deviceDisplay . '">';
           if ($action['type'] == 'link') {
             echo '<a href="' . $actionUrl . '" target="' . $action['link']['target'] . '" class="button cta' . $styleClasses . '">';

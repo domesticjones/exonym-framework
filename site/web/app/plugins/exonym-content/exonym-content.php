@@ -3,7 +3,7 @@
     Plugin Name: Exonym - Content Architect
     Plugin URI: http://domesticjones.com
     Description: Modules for building out page content
-    Version: 1.1
+    Version: 1.2
     Author: Dustin Jones
     Author URI: http://domesticjones.com
     Text Domain: exCon

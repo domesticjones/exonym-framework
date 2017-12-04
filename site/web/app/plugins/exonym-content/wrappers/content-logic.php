@@ -4,10 +4,10 @@
   // TAB: Styling - Text
   function exCon_textStyles() {
     $gridText = get_sub_field('text');
-    $textSize = ' module-text-' . $gridText['size'];
-    $textColor = ' module-color-' . $gridText['text_color'];
-    $textLink = ' module-link-' . $gridText['link_color'];
-    $textHeading = ' module-heading-' . $gridText['heading_color'];
+    $textSize = ' module-text-size-' . $gridText['size'];
+    $textColor = ' module-text-color-' . $gridText['text_color'];
+    $textLink = ' module-link-color-' . $gridText['link_color'];
+    $textHeading = ' module-heading-color-' . $gridText['heading_color'];
     $output = $textSize . $textColor . $textLink . $textHeading;
     return $output;
   }

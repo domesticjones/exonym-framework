@@ -6,6 +6,7 @@
 
   ul {
     @include grid(center, center, row, wrap);
+    @include listStripped();
   }
 
   li {

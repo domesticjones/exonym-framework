@@ -2,8 +2,8 @@
  ---------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i');
 
-$body-font: 'Lato', sans-serif;
-$heading-font: 'Lato', sans-serif;
+$font-default: 'Lato', sans-serif;
+$font-heading: 'Lato', sans-serif;
 
 $font-size: 16px;
 
@@ -14,13 +14,29 @@ $font-ultra-bold:   900;
 
 $font-italic:       italic;
 
-em {
-  font-style: $font-italic;
+// Define if font weights and styles use markup or an alternate font face
+$useMarkupBold: true;
+$useMarkupItal: true;
+
+@mixin fontBold($undo: true, $weight: $font-bold) {
+  @if $useMarkupBold {
+    @if $undo { font-weight: $weight; } @else { font-weight: $font-normal; }
+  } @else {
+    @if $undo { font-family: $weight; } @else { font-family: $font-default; }
+  }
 }
 
-strong {
-  font-weight: $font-bold;
+@mixin fontItalic($undo: true, $style: $font-italic) {
+  @if $useMarkupItal {
+    @if $undo { font-style: $style; } @else { font-style: normal; }
+  } @else {
+    @if $undo { font-family: $style; } @else { font-family: $font-default; }
+  }
 }
+
+strong { @include fontBold(); }
+em { @include fontItalic(); }
+small { font-size: 0.75rem; }
 
 /** Body Font Defaults
  ---------------------------------------------------------*/
@@ -28,8 +44,18 @@ body {
   color: black;
   line-height: 1;
   font-size: $font-size;
-  font-family: $body-font;
-  font-weight: $font-light;
+  font-family: $font-default;
+  font-weight: $font-normal;
+}
+
+/** Module Text Sizes
+ ---------------------------------------------------------*/
+.module-text-size {
+  &-xsmall { font-size: 0.75em; }
+  &-small { font-size: 0.85em; }
+  &-normal { font-size: 1em; }
+  &-large { font-size: 1.25em; }
+  &-xlarge { font-size: 1.5em; }
 }
 
 /** Headings
@@ -41,10 +67,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
   line-height: 1;
-  font-weight: $font-ultra-bold;
-  font-family: $heading-font;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
+  font-family: $font-heading;
+  @include fontBold();
 }
 
 h1 {
@@ -76,19 +100,12 @@ h5 {
 h6 {
   font-size: 0.75em;
   margin-bottom: 2em;
-  font-weight: $font-bold;
   text-transform: uppercase;
   letter-spacing: 0.25em;
 }
 
 /** List Settings
  ---------------------------------------------------------*/
-@mixin listStripped($margin: 0, $padding: 0) {
-  list-style-type: none;
-  margin: $margin;
-  padding: $padding;
-}
-
 ul, ol {
   margin: 0 0 2em 2rem;
   padding: 0;
@@ -117,22 +134,15 @@ p {
 
 blockquote {
   display: block;
-  background: white;
   padding: 1em 1.25em 1em 3em;
   margin: 0 0 1.25em 0;
   position: relative;
-  color: black;
-  font-style: $font-italic;
-  border: 1px solid black;
-  border-left: 1em solid black;
 
   &::before {
     content: '\201C';
     font-family: Georgia, serif;
     font-size: 4em;
     font-weight: bold;
-    color: black;
-    font-style: $font-normal;
     position: absolute;
     left: 0.5rem;
     top: 0.25rem;

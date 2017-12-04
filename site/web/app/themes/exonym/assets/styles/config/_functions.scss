@@ -16,3 +16,17 @@
     @include linkArrayHover();
   }
 }
+
+/** Strip Lists down to nothing
+ ---------------------------------------------------------*/
+@mixin listStripped($display: block, $margin: 0, $padding: 0) {
+  list-style-type: none;
+  margin: $margin;
+  padding: $padding;
+
+  li {
+    display: $display;
+    margin: 0;
+    padding: 0;
+  }
+}

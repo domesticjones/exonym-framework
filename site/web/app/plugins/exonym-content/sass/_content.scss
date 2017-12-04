@@ -9,13 +9,3 @@
 .module-align-right { margin-left: auto; }
 .module-align-top { margin-bottom: auto; }
 .module-align-bottom { margin-top: auto; }
-
-/** Text Settings
- ---------------------------------------------------------*/
-.module-text {
-  &-xsmall { font-size: 0.75em; }
-  &-small { font-size: 0.85em; }
-  &-normal { font-size: 1em; }
-  &-large { font-size: 1.25em; }
-  &-xlarge { font-size: 1.5em; }
-}

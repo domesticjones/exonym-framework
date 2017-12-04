@@ -15,8 +15,8 @@
   // Heading Color
   .module-heading-#{$name} { @include headingColor($value); }
   // CTA BG's
-  a.cta-bg-#{$name} { background-color: $value; }
-  a.cta-bg-#{$name}:focus { background-color: $value; }
+  .module-ctas a.cta-bg-#{$name} { background-color: $value; }
+  .module-ctas a.cta-bg-#{$name}:focus { background-color: $value; }
   // CTA Colors
-  @include linkColor($value, all, 'a.cta-#{$name}');
+  @include linkColor($value, all, '.module-ctas a.cta-#{$name}');
 }
