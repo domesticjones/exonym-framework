@@ -8,7 +8,10 @@
     $textColor = ' module-text-color-' . $gridText['text_color'];
     $textLink = ' module-link-color-' . $gridText['link_color'];
     $textHeading = ' module-heading-color-' . $gridText['heading_color'];
-    $output = $textSize . $textColor . $textLink . $textHeading;
+    $output = '';
+    if ($gridText && get_row_layout() != 'slideshow') {
+      $output = $textSize . $textColor . $textLink . $textHeading;
+    }
     return $output;
   }
 
@@ -18,7 +21,10 @@
     $alignment = $contentSettings['alignment'];
     $alignX = ' module-align-' . $alignment['horizontal'];
     $alignY = ' module-align-' . $alignment['vertical'];
-    $output = $alignX . $alignY;
+    $output = '';
+    if ($contentSettings && get_row_layout() != 'slideshow') {
+      $output = $alignX . $alignY;
+    }
     return $output;
   }
 
@@ -28,7 +34,7 @@
     $width = $contentSettings['width']['percent'];
     $max = $contentSettings['width']['max_width'];
     $output = '';
-    if(!$max) {
+    if(!$max && get_row_layout() != 'slideshow') {
       $output = 'width: ' . $width . '%;';
     }
     return $output;

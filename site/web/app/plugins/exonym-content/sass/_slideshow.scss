@@ -1,0 +1,18 @@
+.module-slideshow .module-content {
+  width: 100%;
+}
+
+.module-slide-content-wrap {
+  @include grid(center, center);
+  position: relative;
+}
+
+.module-slideshow-container {
+  z-index: 80;
+}
+
+.slideshow-nav ul,
+.slideshow-nav button {
+  position: absolute;
+  z-index: 90;
+}

@@ -18,8 +18,13 @@ jQuery(document).ready(() => {
   });
 
   // MODULE: Slideshow
-  $('.module-slideshow-container').slick({
-    autoplay: false,
+  $('.module-slideshow-container').each((i,e) => {
+    const $this = $(e);
+    $this.slick({
+      adaptiveHeight: true,
+      appendDots: $this.prev('.slideshow-nav'),
+      appendArrows: $this.prev('.slideshow-nav'),
+    });
   });
 
   // MODULE: Gallery Slideshow
