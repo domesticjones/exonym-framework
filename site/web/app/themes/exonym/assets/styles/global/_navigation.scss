@@ -5,7 +5,7 @@
 @mixin navMenu($style) {
   @if $style == dropdown {
     ul {
-      @include listStripped('block');
+      @include listStripped();
       li { position: relative; float: left;
         a { display: block; white-space: nowrap; }
         & > ul { display: none; position: absolute; min-width: 100%; z-index: 999;
