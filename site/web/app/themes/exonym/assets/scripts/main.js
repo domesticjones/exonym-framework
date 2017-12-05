@@ -56,10 +56,6 @@ jQuery(document).ready(() => {
     });
   });
 
-
-
-
-
   // MODULES: Animate onScreen
   $(window).on('load resize scroll', () => {
     $('.animate-on-enter').each((i, el) => {

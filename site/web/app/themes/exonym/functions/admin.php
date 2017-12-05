@@ -30,6 +30,15 @@
     wp_enqueue_style('custom-login', asset_path('styles/login.css'));
     wp_enqueue_script('custom-login', asset_path('scripts/login.js'));
   }
+  function custom_login_logo() { ?>
+    <style type="text/css">
+      #login h1 a,
+      .login h1 a {
+        background-image: url(<?php echo ex_logo('alternate', 'dark'); ?>);
+      }
+    </style>
+  <?php }
+  add_action('login_enqueue_scripts', 'custom_login_logo');
 
   // Enable SVG upload in admin
   function wpcontent_svg_mime_type($mimes = array()) {
