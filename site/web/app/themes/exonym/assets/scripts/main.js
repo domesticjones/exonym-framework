@@ -6,16 +6,10 @@ jQuery(document).ready(() => {
   $('#container iframe, #container embed, #container video').not('.ignore-ratio').wrap('<div class="video-container" />');
 
   // HEADER: Responsive Nav Toggle
-  $('#responsive-nav-toggle').click(e => {
-    const $this = $(e.currentTarget);
-    e.preventDefault();
-    $this.toggleClass('is-active');
-    $('#header-responsive').toggleClass('is-active');
-  });
-  $('#responsive-nav-close').click(e => {
-    e.preventDefault();
-    $('#header-responsive, #responsive-nav-toggle').removeClass('is-active');
-  });
+    $('#responsive-nav-toggle').click(e => {
+      const $this = $(e.currentTarget);
+      $this.toggleClass('is-active');
+    });
 
   // MODULE: Slideshow
   $('.module-slideshow-container').each((i,e) => {

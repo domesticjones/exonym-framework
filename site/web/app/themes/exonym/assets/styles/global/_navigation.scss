@@ -1,11 +1,11 @@
+#responsive-nav-toggle {
+  @include hamburgerMenu(12, $black, 0.75);
+}
 .menu-dropdown ul {
-  @include listStripped();
+  @include listStripped('block');
 
   li {
     position: relative;
-    margin: 0;
-    padding: 0;
-    display: block;
     float: left;
 
     a {

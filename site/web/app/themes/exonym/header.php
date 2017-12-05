@@ -34,9 +34,11 @@
             )); ?>
           </nav>
           <?php ex_social(); ?>
-					<button id="responsive-nav-toggle" class="nav-responsive-toggle button-stripped">
-						<img src="<?php echo asset_path('images/icon-menu.svg'); ?>" alt="Navigation Toggle">
-					</button>
+					<a href="#" id="responsive-nav-toggle">
+	          <span class="line"></span>
+	          <span class="line"></span>
+	          <span class="line"></span>
+					</a>
         </div>
       </header>
 			<header id="header-responsive">

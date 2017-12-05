@@ -30,6 +30,8 @@
     wp_enqueue_style('custom-login', asset_path('styles/login.css'));
     wp_enqueue_script('custom-login', asset_path('scripts/login.js'));
   }
+
+  // Custom Login Logo
   function custom_login_logo() { ?>
     <style type="text/css">
       #login h1 a,
