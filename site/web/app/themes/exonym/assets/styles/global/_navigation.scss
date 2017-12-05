@@ -1,52 +1,25 @@
 #responsive-nav-toggle {
   @include hamburgerMenu(12, $black, 0.75);
 }
-.menu-dropdown ul {
-  @include listStripped('block');
 
-  li {
-    position: relative;
-    float: left;
-
-    a {
-      display: block;
-      white-space: nowrap;
-      background-color: transparent;
-    }
-
-    & > ul {
-      display: none;
-      position: absolute;
-      min-width: 100%;
-      z-index: 999;
-
-      li {
-        display: block;
-        float: none;
-        position: relative;
-      }
-
-      ul {
-        left: 100%;
-        top: 0;
-
-        li a {
-          min-width: 100%;
+@mixin navMenu($style) {
+  @if $style == dropdown {
+    ul {
+      @include listStripped('block');
+      li { position: relative; float: left;
+        a { display: block; white-space: nowrap; }
+        & > ul { display: none; position: absolute; min-width: 100%; z-index: 999;
+          li { display: block; float: none; position: relative; }
+          ul { left: 100%; top: 0;
+            li a { min-width: 100%; }
+          }
         }
+        &:hover > ul { display: block; }
       }
     }
-
-    &:hover > ul {
-      display: block;
-    }
-  }
-}
-
-
-.menu-vertical ul {
-  @include listStripped();
-
-  li {
-    display: block;
+  } @else if $style == vertical {
+    ul { @include listStripped(); }
+  } @else if $style == horizontal {
+    ul { @include listStripped(inline-block); }
   }
 }

@@ -41,6 +41,7 @@
 }
 
 .nav-header {
+  @include navMenu(dropdown);
   margin-left: auto;
 
   a {
