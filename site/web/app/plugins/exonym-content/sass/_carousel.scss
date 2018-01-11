@@ -1,8 +1,3 @@
-.slick-slide:active,
-.slick-slide:focus {
-  outline: none;
-}
-
 .carousel-wrapper {
 
   .slick-slide {
@@ -11,8 +6,19 @@
 }
 
 .carousel-slide-wrap {
+  @include grid(center, center);
   position: relative;
   z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide-inner {
+  p:last-of-type,
+  ul:last-of-type,
+  ol:last-of-type {
+    padding-bottom: 0;
+  }
 }
 
 .module-carousel-post-link {
@@ -29,12 +35,4 @@
   img {
     display: block;
   }
-}
-
-.carousel-nav {
-  position: absolute;
-  z-index: 999;
-  display: block;
-  cursor: hand;
-  cursor: pointer;
 }

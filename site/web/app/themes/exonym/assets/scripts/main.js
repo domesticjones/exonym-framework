@@ -21,6 +21,16 @@ jQuery(document).ready(() => {
     });
   });
 
+  // MODULE: Carousel
+  $('.carousel-wrapper').each((i,e) => {
+    const $this = $(e);
+    $this.slick({
+      adaptiveHeight: true,
+      appendDots: $this.prev('.slideshow-nav'),
+      appendArrows: $this.prev('.slideshow-nav'),
+    });
+  });
+
   // MODULE: Gallery Slideshow
   $('.module-gallery-slideshow').slick({
     adaptiveHeight: true,

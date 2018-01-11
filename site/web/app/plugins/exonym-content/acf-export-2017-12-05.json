@@ -1004,7 +1004,15 @@
                                 "type": "range",
                                 "instructions": "",
                                 "required": 0,
-                                "conditional_logic": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_59f6a7bb867a9",
+                                            "operator": "!=",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
                                 "wrapper": {
                                     "width": "",
                                     "class": "",
@@ -2584,7 +2592,7 @@
                                         "delay": 1
                                     },
                                     {
-                                        "key": "field_59f51df7e5c84",
+                                        "key": "field_5a24add60adb7",
                                         "label": "Settings",
                                         "name": "settings",
                                         "type": "clone",
@@ -2597,7 +2605,12 @@
                                             "id": ""
                                         },
                                         "clone": [
-                                            "group_59f5140d56a78"
+                                            "group_59f5076d561aa",
+                                            "group_59f4f2fcc0e59",
+                                            "field_59f4fc6564b34",
+                                            "field_59f503e6267bf",
+                                            "field_59f4fea38a9a2",
+                                            "field_59f50130267b7"
                                         ],
                                         "display": "seamless",
                                         "layout": "block",
@@ -2607,7 +2620,327 @@
                                 ]
                             },
                             {
-                                "key": "field_59f51add98f75",
+                                "key": "field_5a24c5de273f6",
+                                "label": "Slideshow Settings",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "left",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5a24c7ac273f7",
+                                "label": "Autoplay",
+                                "name": "autoplay",
+                                "type": "group",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "table",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5a24c7b5273f8",
+                                        "label": "Enable",
+                                        "name": "enable",
+                                        "type": "true_false",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "message": "Enable autoplay",
+                                        "default_value": 1,
+                                        "ui": 0,
+                                        "ui_on_text": "",
+                                        "ui_off_text": ""
+                                    },
+                                    {
+                                        "key": "field_5a24c7ca273f9",
+                                        "label": "Speed",
+                                        "name": "speed",
+                                        "type": "number",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_5a24c7b5273f8",
+                                                    "operator": "==",
+                                                    "value": "1"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": 5000,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "seconds",
+                                        "min": "",
+                                        "max": "",
+                                        "step": ""
+                                    },
+                                    {
+                                        "key": "field_5a24ccd45ffa9",
+                                        "label": "Pause on Hover",
+                                        "name": "pause_on_hover",
+                                        "type": "true_false",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_5a24c7b5273f8",
+                                                    "operator": "==",
+                                                    "value": "1"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "message": "Halt the slideshow when user mouses over it",
+                                        "default_value": 0,
+                                        "ui": 0,
+                                        "ui_on_text": "",
+                                        "ui_off_text": ""
+                                    },
+                                    {
+                                        "key": "field_5a24ccfe5ffaa",
+                                        "label": "Pause on Click",
+                                        "name": "pause_on_click",
+                                        "type": "true_false",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_5a24c7b5273f8",
+                                                    "operator": "==",
+                                                    "value": "1"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "message": "Halt the slideshow if the user clicks on anything inside the slide",
+                                        "default_value": 0,
+                                        "ui": 0,
+                                        "ui_on_text": "",
+                                        "ui_off_text": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_5a24d11c6f4f2",
+                                "label": "Transition",
+                                "name": "transition",
+                                "type": "group",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "table",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5a24d12c6f4f3",
+                                        "label": "Type",
+                                        "name": "type",
+                                        "type": "button_group",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "choices": {
+                                            "horizontal": "Horizontal",
+                                            "fade": "Fade"
+                                        },
+                                        "allow_null": 0,
+                                        "default_value": "horizontal",
+                                        "layout": "horizontal",
+                                        "return_format": "value"
+                                    },
+                                    {
+                                        "key": "field_5a24d2076f4f4",
+                                        "label": "Speed",
+                                        "name": "speed",
+                                        "type": "number",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "0.5",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "seconds",
+                                        "min": "",
+                                        "max": "",
+                                        "step": ""
+                                    },
+                                    {
+                                        "key": "field_5a24d6c9f2118",
+                                        "label": "Animation",
+                                        "name": "animation",
+                                        "type": "select",
+                                        "instructions": "Check out options <a href=\"http:\/\/easings.net\/\" target=\"_blank\">here<\/a>.",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "choices": {
+                                            "linear": "Linear",
+                                            "ease": "Ease",
+                                            "ease-in": "Ease In",
+                                            "ease-out": "Ease Out",
+                                            "ease-in-out": "Ease In\/Out",
+                                            "cubic-bezier(0.47, 0, 0.745, 0.715)": "Ease In (Sine)",
+                                            "cubic-bezier(0.39, 0.575, 0.565, 1)": "Ease Out (Sine)",
+                                            "cubic-bezier(0.445, 0.05, 0.55, 0.95)": "Ease In\/Out (Sine)",
+                                            "cubic-bezier(0.55, 0.085, 0.68, 0.53)": "Ease In (Quad)",
+                                            "cubic-bezier(0.25, 0.46, 0.45, 0.94)": "Ease Out (Quad)",
+                                            "cubic-bezier(0.455, 0.03, 0.515, 0.955)": "Ease In\/Out (Quad)",
+                                            "cubic-bezier(0.55, 0.055, 0.675, 0.19)": "Ease In (Cubic)",
+                                            "cubic-bezier(0.215, 0.61, 0.355, 1)": "Ease Out (Cubic)",
+                                            "cubic-bezier(0.645, 0.045, 0.355, 1)": "Ease In\/Out (Cubic)",
+                                            "cubic-bezier(0.895, 0.03, 0.685, 0.22)": "Ease In (Quart)",
+                                            "cubic-bezier(0.165, 0.84, 0.44, 1)": "Ease Out (Quart)",
+                                            "cubic-bezier(0.77, 0, 0.175, 1)": "Ease In\/Out (Quart)",
+                                            "cubic-bezier(0.755, 0.05, 0.855, 0.06)": "Ease In (Quint)",
+                                            "cubic-bezier(0.23, 1, 0.32, 1)": "Ease Out (Quint)",
+                                            "cubic-bezier(0.86, 0, 0.07, 1)": "Ease In\/Out (Quint)",
+                                            "cubic-bezier(0.95, 0.05, 0.795, 0.035)": "Ease In (Expo)",
+                                            "cubic-bezier(0.19, 1, 0.22, 1)": "Ease Out (Expo)",
+                                            "cubic-bezier(1, 0, 0, 1)": "Ease In\/Out (Expo)",
+                                            "cubic-bezier(0.6, 0.04, 0.98, 0.335)": "Ease In (Circle)",
+                                            "cubic-bezier(0.075, 0.82, 0.165, 1)": "Ease Out (Circle)",
+                                            "cubic-bezier(0.785, 0.135, 0.15, 0.86)": "Ease In\/Out (Circle)",
+                                            "cubic-bezier(0.6, -0.28, 0.735, 0.045)": "Ease In (Back)",
+                                            "cubic-bezier(0.175, 0.885, 0.32, 1.275)": "Ease Out (Back)",
+                                            "cubic-bezier(0.68, -0.55, 0.265, 1.55)": "Ease In\/Out (Back)"
+                                        },
+                                        "default_value": [
+                                            "ease-in-out"
+                                        ],
+                                        "allow_null": 0,
+                                        "multiple": 0,
+                                        "ui": 1,
+                                        "ajax": 0,
+                                        "return_format": "value",
+                                        "placeholder": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_5a24df281f2e9",
+                                "label": "Navigation",
+                                "name": "navigation",
+                                "type": "group",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "table",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5a24df3f1f2ea",
+                                        "label": "Arrows",
+                                        "name": "arrows",
+                                        "type": "true_false",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "message": "Show next\/previous arrows",
+                                        "default_value": 0,
+                                        "ui": 0,
+                                        "ui_on_text": "",
+                                        "ui_off_text": ""
+                                    },
+                                    {
+                                        "key": "field_5a24df571f2eb",
+                                        "label": "Dots",
+                                        "name": "dots",
+                                        "type": "true_false",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "message": "Show dots indicating slides",
+                                        "default_value": 0,
+                                        "ui": 0,
+                                        "ui_on_text": "",
+                                        "ui_off_text": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_5a24a25dab18d",
+                                "label": "Container",
+                                "name": "",
+                                "type": "tab",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "placement": "left",
+                                "endpoint": 0
+                            },
+                            {
+                                "key": "field_5a24a238ab18c",
                                 "label": "Settings",
                                 "name": "settings",
                                 "type": "clone",
@@ -2620,7 +2953,28 @@
                                     "id": ""
                                 },
                                 "clone": [
-                                    "group_59f4fc19d26a0",
+                                    "field_59f503e1267be",
+                                    "field_59f4f44352e23"
+                                ],
+                                "display": "seamless",
+                                "layout": "block",
+                                "prefix_label": 0,
+                                "prefix_name": 0
+                            },
+                            {
+                                "key": "field_5a24bb0e6bc4e",
+                                "label": "Responsive",
+                                "name": "responsive",
+                                "type": "clone",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "clone": [
                                     "group_59f51288a86d9"
                                 ],
                                 "display": "seamless",
@@ -2696,6 +3050,11 @@
                     "param": "post_type",
                     "operator": "==",
                     "value": "page"
+                },
+                {
+                    "param": "page_type",
+                    "operator": "!=",
+                    "value": "posts_page"
                 }
             ]
         ],

@@ -1,7 +1,5 @@
-#responsive-nav-toggle {
-  @include hamburgerMenu(12, $black, 0.75);
-}
-
+/** Nav Menu Mixin
+ ---------------------------------------------------------*/
 @mixin navMenu($style) {
   @if $style == dropdown {
     ul {
@@ -22,4 +20,10 @@
   } @else if $style == horizontal {
     ul { @include listStripped(inline-block); }
   }
+}
+
+/** Responsive Navigation
+ ---------------------------------------------------------*/
+#responsive-nav-toggle {
+  @include hamburgerMenu(9, $black, 0.75);
 }

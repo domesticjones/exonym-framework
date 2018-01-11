@@ -20,7 +20,6 @@
 /** Strip Lists down to nothing
  ---------------------------------------------------------*/
 @mixin listStripped($display: block, $margin: 0, $padding: 0) {
-  display: $display;
   list-style-type: none;
   margin: $margin;
   padding: $padding;

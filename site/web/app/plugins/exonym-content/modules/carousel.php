@@ -17,6 +17,7 @@
 
   if (have_rows('carousel_slides')):
 ?>
+  <nav class="slideshow-nav"></nav>
   <section class="carousel-wrapper" data-slick='{<?php echo $slickOptions; ?>}'>
     <?php while (have_rows('carousel_slides')): the_row(); ?>
       <?php

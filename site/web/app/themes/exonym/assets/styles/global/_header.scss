@@ -35,11 +35,6 @@
   height: 2.5rem;
 }
 
-.header-responsive,
-.nav-responsive-toggle {
-  display: none;
-}
-
 .nav-header {
   @include navMenu(dropdown);
   margin-left: auto;
@@ -54,33 +49,8 @@
   }
 }
 
-/** Responsive Menu
- ---------------------------------------------------------*/
-.nav-responsive-toggle {
-  img {
-    display: block;
-    height: 2rem;
-  }
-}
-
-.nav-responsive-close {
-  margin: 0 auto;
-
-  img {
-    display: block;
-    height: 3rem;
-  }
-}
-
-#header-responsive {
-  max-height: 0px;
-  overflow: hidden;
-  text-align: center;
-  @include transition();
-
-  &.is-active {
-    max-height: 100vh;
-  }
+#responsive-nav-toggle {
+  display: none;
 }
 
 /** Responsive Breakpoints
@@ -95,8 +65,7 @@
     display: none;
   }
 
-  .nav-responsive-toggle,
-  #header-responsive {
+  #responsive-nav-toggle {
     display: block;
   }
 }

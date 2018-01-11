@@ -3,19 +3,19 @@
 .carousel-wrapper {
 
   .slick-slide {
+    @include grid(center, center);
     padding: 1rem;
+		height: auto;
+  }
+
+  .slick-track {
+    @include grid(flex-start, stretch);
   }
 }
 
 .carousel-slide-wrap {
   padding: 1rem;
   border-radius: 2px;
-  transform: scale(1);
-  @include transition();
-
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 .module-carousel-post-link {
